@@ -185,9 +185,7 @@ body {
     </div>
   </div>
 </nav>
-<?php 
-print_r($_SESSION);
-?>
+
 <style>
   .container-fluid {
       padding: 10px;
