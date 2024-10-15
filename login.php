@@ -17,14 +17,14 @@
         <div class="right-login">
             <div class="card-login">
             <h1>Login!</h1>
-                <form action="POST">
+                <form action="testeLogin.php" method="Post">
                     <div class="textfield">
                         <input type="email" name="usuario" placeholder="Email:">
                     </div>
                     <div class="textfield">
-                        <input type="password" name="senha" placeholder="Senha:">
+                        <input type="password" name="pass" placeholder="Senha:">
                     </div>
-                    <button class="btn-login" type="submit" value="enviar">Entrar</button>
+                    <input type="submit" class="btn-login" value="enviar" name="submit">
                 </form>
                 <p>Não tem uma conta ainda? <br><a href="cadastro.php">Criar uma conta!</a></p>
             </div>
