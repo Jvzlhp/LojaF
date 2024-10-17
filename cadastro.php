@@ -23,32 +23,36 @@ if(isset($_POST['submit'])){
     <title>Cadastro</title>
 </head>
 
+
 <body>
+   
     <div class="container">
         <div class="form-image">
             <img src="img/games.svg" alt="">
         </div>
         <div class="form">
-            <form action="cadastro.php" method="POST">
+            <form id="Formulario" action="cadastro.php" method="POST" >
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <button><a href="login.php">Entrar</a></button>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
-                        <input id="firstname" type="text" name="nome" placeholder="Nome :" required>
+                        <input id="firstname" type="text" name="nome" placeholder="Nome :" class="inputs required" oninput="nameValidate()">
+                        <span class="span-required">Nome deve ter no minimo 3 caracteres</span>
                     </div>
 
                     <div class="input-box">
-                        <input id="lastname" type="text" name="sobrenome" placeholder="Sobrenome :">
+                        <input  id="lastname" type="text" name="sobrenome" placeholder="Sobrenome :">
                     </div>
                     <div class="input-box">
-                        <input id="email" type="email" name="email" placeholder="E-mail :" required>
+                        <input class="inputs required" id="email" type="email" name="email" placeholder="E-mail :" oninput="emailValidate()" >
+                        <span class="span-required">Digite um email Valido</span>
                     </div>
 
                     <div class="input-box">
@@ -56,12 +60,14 @@ if(isset($_POST['submit'])){
                     </div>
 
                     <div class="input-box">
-                        <input id="password" type="password" name="senha" placeholder="Senha :" required>
+                        <input class="inputs required" id="password" type="password" name="senha" placeholder="Senha :" oninput="mainPasswordValidate()" >
+                        <span class="span-required">A Senha deve ter no minimo 8 caracteres</span>
                     </div>
 
 
                     <div class="input-box">
-                        <input id="senha" type="password" name="ConfirmSenha" placeholder="Confirme a Senha :" required>
+                        <input class="inputs required" id="senha" type="password" name="ConfirmSenha" placeholder="Confirme a Senha :" oninput="comparePassword()">
+                        <span class="span-required">As senhas não são Compativeis</span>
                     </div>
 
                 </div>
@@ -96,6 +102,71 @@ if(isset($_POST['submit'])){
             </form>
         </div>
     </div>
+    <script>
+   const formula = document.getElementById('Formulario')
+   const campos = document.querySelectorAll('.required') 
+   const spans = document.querySelectorAll('.span-required')
+   const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+   formula.addEventListener('submit', (event) => {
+    nameValidate();
+    emailValidate();
+    mainPasswordValidate();
+    comparePassword();
+
+    const hasError = [...spans].some(span => span.style.display === 'block');
+
+    if (hasError) {
+        event.preventDefault(); // Só previne o envio se houver erros
+    }
+});
+
+   function setError(index){
+     campos[index].style.borderBottom = "2px solid red"
+     spans[index].style.display= "block"
+     spans[index].style.fontSize = "12px"
+     spans[index].style.color = "red"
+     spans[index].style.margin = "3px 0 0 1px"
+   }
+   function removeError(index){
+    campos[index].style.borderBottom = ""
+     spans[index].style.display= "none"
+   }
+
+   function nameValidate(){
+    if(campos[0].value.length < 3){
+        setError(0);
+    }else{
+       removeError(0)
+    }
+}
+    function emailValidate(){
+        if(!emailRegex.test(campos[1].value)){
+           setError(1)
+        }else{
+           removeError(1)
+        }
+    }
+  
+    function mainPasswordValidate(){
+        if(campos[2].value.length < 8){
+            setError(2)
+        }else{
+            removeError(2)
+            comparePassword();
+        }
+    }
+    function comparePassword(){
+        if(campos[2].value == campos[3].value && campos[3].value.length >=8){
+            removeError(3)
+        }else{
+            setError(3)
+        }
+    }
+
+
+    </script>
+    
 </body>
 
 </html>
