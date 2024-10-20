@@ -14,7 +14,8 @@ session_start();
 </head>
 <style>
 
-
+  /* aoifnoidnf */
+  
 .pai{
     padding:30px;
     padding-left:140px;
@@ -26,10 +27,9 @@ session_start();
 
 }
 body {
-    background-color: #101014;
+  background: #201b2c;
     font-family: Arial, sans-serif;
     color: white;
-    margin: 0;
 }
 
 
@@ -41,7 +41,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 650px; 
-    border-radius: 20px;
 
     
     
@@ -55,9 +54,6 @@ body {
 }
 
 .carousel-inner{
-  display:flex;
-}
-.carou{
   display:flex;
 }
 
@@ -87,9 +83,13 @@ h3.novos{
     
 }
 
+.carousel-slide{
+  height: 10px;
+}
 
 
-
+/*  <button class="btn btn-outline-light me-2">Login</button>
+        <button class="btn btn-outline-light">Cadastre-se</button> */
 
 
 
@@ -97,140 +97,19 @@ h3.novos{
 <body>
    
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-color navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Suporte</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="#">Games</a>
-        </li>
-      </ul>
-      <div class="d-flex">
-        <button class="btn btn-outline-light me-2">Login</button>
-        <button class="btn btn-outline-light">Cadastre-se</button>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<style>
-  .container-fluid {
-      padding: 10px;
-      
-      
-  }
-
-  .navbar {
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .navbar a {
-      color: white; 
-      font-size: 14px;
-      margin-left:20px;
-      font-weight:300px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
-  }
-
-
-  .nav-link.active {
-      color: #00ff88 !important; 
-  }
-
-  .dropdown-menu {
-      background-color: #343a40; 
-  }
-
-  .btn {
-      transition: background-color 0.3s ease;
-      margin-right:20px;
-      margin-left:10px;
-      font-weight:300px;
-      letter-spacing: 2px;
-
-  }
-
-  .btn:hover {
-      background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover nos botões */
-      background-color: #00ff88      ; /* Cor verde ao passar o mouse */
-      
-
-  }
-  .btn-outline-light {
-    --bs-btn-color: #f8f9fa;
-    --bs-btn-border-color: #77ffc0;
-    --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #f8f9fa;
-    --bs-btn-hover-border-color: #f8f9fa;
-    --bs-btn-focus-shadow-rgb: 248, 249, 250;
-    --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #f8f9fa;
-    --bs-btn-active-border-color: #f8f9fa;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #f8f9fa;
-    --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: #f8f9fa;
-    --bs-gradient: none;
-    
-}
-
-</style>
-
-
-
-
-
-
+<?php 
+include_once('navbar.php');
+?>
 <!-- carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" >
-  <div class="carousel-indicators"  >
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img src="img/vava.jpg" class=" d-block w-100 " alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="img/amongu.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="img/zelda.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
-
-<style>
-  .carousel-slide{
-    height: 10px;
-  }
-</style>
+<!-- fim carousel -->
 <div class="pai">
 <!-- carousel 2 -->
 
 <div class="p">
     <h3 class="novos">Novos lançamentos</h3>
 </div>
+
 <div id="carousel">
 <div id="carouselExampleIndicators2" class="carousel slide">
   <div class="carousel-indicators">
@@ -238,8 +117,7 @@ h3.novos{
     <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carou">
-
+<div class="carou">
   <div class="carousel-innerr">
     <div class="carousel-item active">
       <img src="img/amongu.jpg" class="d-block w-60" alt="...">
@@ -259,6 +137,7 @@ h3.novos{
         <h6 class="title2">Já disponível</h6>
         <p class="title3">R$ 10,00 </p>
 
+        </div>
 
     </div>
     </div>
@@ -280,16 +159,34 @@ h3.novos{
   </button> 
 </div>
 </div>
-</div>
 
 
 <Style>
+
+ 
+  .carousel-indicators{
+    padding-top:10px ;
+  }
+.carou{
+  display:flex;
+  width: 1200px;
+}
+#carouselExampleIndicators{
+padding: 6% ;
+}
+
+  #carouselExampleIndicators2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+  }
   .carousel-item.active {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;  
-  border-radius: 10px;
+
 }
 #carouselExampleIndicators2 .carousel-item img.d-block {
   width: 80%; /* Ajuste conforme necessário */
@@ -463,9 +360,8 @@ img.i:hover {
   transform: rotate(45deg); /* Right arrow */
 
 }
-..carousel-control-next::before{
 
-}
+
 </style>
 
 
